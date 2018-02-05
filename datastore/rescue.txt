@@ -1,0 +1,27 @@
+if(->ajax()){
+=;
+ = inventories::where('item', 'LIKE', '%'.->search.'%')->
+orWhere('holder', 'LIKE', '%'.->search.'%')->
+orWhere('item_number', ->search)->get();
+if()
+{
+=0;
+foreach( as =>)
+{
+++;
+.=
+'<form method=post action=>'.
+'<tr id=row_.$i.>'.
+'<td id=item_name>'.'<input type=hidden name=item>'.->item.'</td>'.
+'<td id=item_number>'.'<input type=hidden name=itme_number>'.->item_number.'</td>'.
+'<td id=holder>'.'<input type=hidden name=holder>'.->holder.'</td>'.
+'<td id=deslocation_item>'.'<input type=hidden name=deslocation>'.->deslocation.'</td>'.
+'<td><input type=submit class=btn btn-info add_btn value=+ add to list></td>'.
+'</tr>';
+}
+return Response();
+}
+}
+}
+}
+
